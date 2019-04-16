@@ -11,4 +11,15 @@ public class Message {
     // Contient le corps du message
     private String body;
 
+    public String getBody() {
+        return body;
+    }
+
+    public long getTimestamp() {
+        return timestamp;
+    }
+
+    public String getAuthor() {
+        return author;
+    }
 }
