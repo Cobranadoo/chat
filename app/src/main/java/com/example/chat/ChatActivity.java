@@ -34,10 +34,12 @@ public class ChatActivity extends AppCompatActivity {
 
     void clearChatList(){
         messageList.clear();
+        adapter.notifyDataSetChanged();
     }
 
     void addReceivedMessage(Message m){
         messageList.add(m);
+        adapter.notifyDataSetChanged();
     }
 
     void sendMessage(Message m){
