@@ -14,7 +14,9 @@ public class MessageViewHolder extends RecyclerView.ViewHolder {
     public MessageViewHolder(@NonNull View v) {
 
         super(v);
-        //authorTextView = v.findViewById("id");
+        authorTextView = v.findViewById(R.id.authorTextView);
+        bodyTextView = v.findViewById(R.id.bodyTextView);
+        timestampTextView = v.findViewById(R.id.timestampTextView);
     }
 
     public void update(Message m){

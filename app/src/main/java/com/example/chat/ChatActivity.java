@@ -4,6 +4,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -39,5 +42,20 @@ public class ChatActivity extends AppCompatActivity {
 
     void sendMessage(Message m){
         //Envoyer un message sur la liste
+    }
+
+    // Extrait le texte du champ e
+    protected String extract(EditText e) {
+        if (!e.getText().toString().matches(""))
+            return e.getText().toString();
+        return null;
+    }
+
+    public void onSendButton(View v) {
+        EditText text = findViewById(R.id.EditText);
+        String message = extract(text);
+        addMessage(new Message(message));
+        Toast t = Toast.makeText(this, message, Toast.LENGTH_SHORT);
+        t.show();
     }
 }

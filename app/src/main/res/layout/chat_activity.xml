@@ -33,6 +33,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="@string/button_validate_text"
+        android:onClick="onSendButton"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toRightOf="@id/guideline1"
         app:layout_constraintRight_toRightOf="parent" />
