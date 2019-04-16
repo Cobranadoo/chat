@@ -29,7 +29,7 @@ public class ChatActivity extends AppCompatActivity {
 
     public void addMessage(Message m) {
         messageList.add(m);
-        adapter.notify();
+        adapter.notifyItemInserted(messageList.size()-1);
     }
 
     void clearChatList(){
