@@ -8,3 +8,6 @@ Réalisé par **Pierrot CAVALIER** et **Florian CAHAY**
 
 ## Bugs
 - Le message envoyé n'est pas stocké sur le serveur, il disparaît si on relance l'application
+
+## Fonctions non réalisées 
+- Les fonctionnalités complémentaires n'ont pas été réalisées
