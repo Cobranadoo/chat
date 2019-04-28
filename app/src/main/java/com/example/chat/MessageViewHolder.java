@@ -1,9 +1,11 @@
 package com.example.chat;
 
-import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
+import android.text.format.DateFormat;
 import android.view.View;
 import android.widget.TextView;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class MessageViewHolder extends RecyclerView.ViewHolder {
 
@@ -11,8 +13,7 @@ public class MessageViewHolder extends RecyclerView.ViewHolder {
     private TextView bodyTextView;
     private TextView timestampTextView;
 
-    public MessageViewHolder(@NonNull View v) {
-
+    public MessageViewHolder(View v) {
         super(v);
         authorTextView = v.findViewById(R.id.authorTextView);
         bodyTextView = v.findViewById(R.id.bodyTextView);
@@ -22,7 +23,8 @@ public class MessageViewHolder extends RecyclerView.ViewHolder {
     public void update(Message m){
         authorTextView.setText(m.getAuthor());
         bodyTextView.setText(m.getBody());
-        timestampTextView.setText(""+m.getTimestamp()); // --> A faire plus proprement
-
+        Calendar calendar = Calendar.getInstance(TimeZone.getTimeZone("Europe/Paris"));
+        calendar.setTimeInMillis(m.getTimestamp() * 1000L);
+        timestampTextView.setText(DateFormat.format("dd/MM/yyyy HH:mm:ss", calendar).toString());
     }
 }
